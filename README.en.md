@@ -1,4 +1,4 @@
-# hwp3 — read and convert HWP 3.x (Hangul 3.0/96/97) documents
+# hwp3 — parser and converter for HWP 3.x (Hangul 3.0/96/97) documents
 
 [한국어](README.md) | English
 
@@ -194,3 +194,10 @@ MIT (`LICENSE`). Two parts have different terms.
 - The Noto fonts in `src/hwp3/fonts/`: SIL OFL 1.1.
 
 Sources and terms of the bundled fonts and character tables are in `src/hwp3/THIRD_PARTY.md` (in Korean; it is installed with the package).
+
+## Notice
+
+This product was developed with reference to the Hangul document file (.hwp) specification published by Hancom Inc.
+(본 제품은 한글과컴퓨터의 한글 문서 파일(.hwp) 공개 문서를 참고하여 개발하였습니다.)
+
+"Hangul" (한글), "Hancom" and "HWP" are trademarks of Hancom Inc. This project is an independent open-source project and is not affiliated with, sponsored by or endorsed by Hancom.
