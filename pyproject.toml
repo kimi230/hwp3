@@ -1,0 +1,31 @@
+[project]
+name = "hwp3"
+version = "0.1.0"
+description = "HWP 3.x(한글 3.0/96/97) 문서를 읽어 JSON·텍스트·HTML·CSV·엑셀로 바꾸는 파이썬 라이브러리. 외부 의존성 없이 해석한다"
+readme = "README.md"
+license = "MIT AND MPL-2.0 AND OFL-1.1"  # 코드 MIT, symbols.py만 MPL 2.0, 동봉 글꼴 OFL 1.1
+license-files = ["LICENSE", "LICENSES/*.txt", "src/hwp3/THIRD_PARTY.md", "src/hwp3/fonts/OFL-*.txt"]
+requires-python = ">=3.11"
+dependencies = []  # 해석과 JSON·텍스트·HTML·CSV 내보내기는 표준 라이브러리만 쓴다
+
+[project.optional-dependencies]
+xlsx = ["openpyxl>=3.1.5"]               # convert --xlsx
+pages = ["fonttools", "brotli", "pillow"]  # convert --pages 에서 글꼴 포함, BMP·WMF 그림 변환
+all = ["hwp3[xlsx,pages]"]
+test = ["pytest", "hwp3[xlsx,pages]"]
+
+[project.scripts]
+hwp3 = "hwp3.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hwp3"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/hwp3", "tests", "README.md", "pyproject.toml", "LICENSE", "LICENSES"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
